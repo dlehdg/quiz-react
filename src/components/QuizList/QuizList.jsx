@@ -8,9 +8,25 @@ const Products = [
   { id: "3", title: "Quiz3" },
   { id: "4", title: "Quiz4" },
   { id: "5", title: "Quiz5" },
+  { id: "6", title: "Quiz6" },
+  { id: "7", title: "Quiz7" },
+  { id: "8", title: "Quiz7" },
+  { id: "9", title: "Quiz7" },
+  { id: "10", title: "Quiz7" },
+  { id: "11", title: "Quiz7" },
+  { id: "12", title: "Quiz7" },
+  { id: "13", title: "Quiz7" },
+  { id: "14", title: "Quiz7" },
+  { id: "15", title: "Quiz7" },
+  { id: "16", title: "Quiz7" },
+  { id: "18", title: "Quiz7" },
+  { id: "19", title: "Quiz7" },
+  { id: "20", title: "Quiz7" },
+  { id: "21", title: "Quiz7" },
+  { id: "22", title: "Quiz7" },
 ];
 
-const QuizList = () => {
+const QuizList = ({ size }) => {
   return (
     <QuizBg>
       {/* <QuizSpan>
@@ -23,7 +39,10 @@ const QuizList = () => {
       <QuizSpan>Quiz 탭</QuizSpan>
       <QuizSpan>Quiz 탭</QuizSpan> */}
 
-      {Products.map((props) => (
+      {/* <QuizSpan>
+        <Link to="/quiz">Quiz 맵 이동</Link>
+      </QuizSpan> */}
+      {Products.slice(size - 7, size).map((props) => (
         <QuizSpan key={props.id}>
           <Link to={`/quiz/${props.id}`}>
             <span>{props.id}번 퀴즈</span>
