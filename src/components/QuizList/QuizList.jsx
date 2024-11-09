@@ -24,6 +24,10 @@ const Products = [
   { id: "20", title: "Quiz7" },
   { id: "21", title: "Quiz7" },
   { id: "22", title: "Quiz7" },
+  { id: "23", title: "Quiz7" },
+  { id: "24", title: "Quiz7" },
+  { id: "25", title: "Quiz7" },
+  { id: "26", title: "Quiz7" },
 ];
 
 const QuizList = ({ size }) => {
@@ -37,12 +41,12 @@ const QuizList = ({ size }) => {
       <QuizSpan>Quiz 탭</QuizSpan>
       <QuizSpan>Quiz 탭</QuizSpan>
       <QuizSpan>Quiz 탭</QuizSpan>
-      <QuizSpan>Quiz 탭</QuizSpan> */}
+      <QuizSpan>Quiz 탭</QuizSpan>  */}
 
       {/* <QuizSpan>
         <Link to="/quiz">Quiz 맵 이동</Link>
       </QuizSpan> */}
-      {Products.slice(size - 7, size).map((props) => (
+      {Products.slice(size - 8, size).map((props) => (
         <QuizSpan key={props.id}>
           <Link to={`/quiz/${props.id}`}>
             <span>{props.id}번 퀴즈</span>
