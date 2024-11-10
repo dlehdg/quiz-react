@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Products = [
-  { id: "1", title: "Quiz1" },
-  { id: "2", title: "Quiz2" },
+  { id: "1", title: "수도" },
+  { id: "2", title: "동화" },
   { id: "3", title: "Quiz3" },
   { id: "4", title: "Quiz4" },
   { id: "5", title: "Quiz5" },
@@ -28,6 +28,28 @@ const Products = [
   { id: "24", title: "Quiz7" },
   { id: "25", title: "Quiz7" },
   { id: "26", title: "Quiz7" },
+  { id: "27", title: "Quiz7" },
+  { id: "28", title: "Quiz7" },
+  { id: "29", title: "Quiz7" },
+  { id: "30", title: "Quiz7" },
+  { id: "31", title: "Quiz7" },
+  { id: "32", title: "Quiz7" },
+  { id: "34", title: "Quiz7" },
+  { id: "35", title: "Quiz7" },
+  { id: "36", title: "Quiz7" },
+  { id: "37", title: "Quiz7" },
+  { id: "38", title: "Quiz7" },
+  { id: "39", title: "Quiz7" },
+  { id: "40", title: "Quiz7" },
+  { id: "41", title: "Quiz7" },
+  { id: "42", title: "Quiz7" },
+  { id: "43", title: "Quiz7" },
+  { id: "44", title: "Quiz7" },
+  { id: "45", title: "Quiz7" },
+  { id: "46", title: "Quiz7" },
+  { id: "47", title: "Quiz7" },
+  { id: "48", title: "Quiz7" },
+  { id: "49", title: "Quiz7" },
 ];
 
 const QuizList = ({ size }) => {
@@ -49,7 +71,7 @@ const QuizList = ({ size }) => {
       {Products.slice(size - 8, size).map((props) => (
         <QuizSpan key={props.id}>
           <Link to={`/quiz/${props.id}`}>
-            <span>{props.id}번 퀴즈</span>
+            <span>{props.title}</span>
           </Link>
         </QuizSpan>
       ))}
@@ -69,8 +91,12 @@ const QuizBg = styled.div`
   gap: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
   margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
 `;
 
 const QuizSpan = styled.div`
@@ -82,4 +108,5 @@ const QuizSpan = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: 5px solid #000;
 `;

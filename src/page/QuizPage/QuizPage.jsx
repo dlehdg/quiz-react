@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const QuizPage = () => {
   const params = useParams();
@@ -18,9 +18,14 @@ const QuizPage = () => {
       id: "4",
       text: "이순신 장군이 육전에서 사용되던 학익진 전술을 최초로 해전에 도입했던 전투는?",
     },
+    {
+      id: "5",
+      text: "이순신 장군이 육전에서 사용되던 학익진 전술을 최초로 해전에 도입했던 전투는?",
+    },
   ];
 
   const [quiz, setQuiz] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     return () => {
@@ -41,6 +46,10 @@ const QuizPage = () => {
       <span>{Arrs[Number(quiz) - 1]?.text}</span>
       <br></br>
       <Link to="/roulette">룰렛 페이지로</Link>
+      <br />
+      <button>
+        <Link to="/">홈으로</Link>
+      </button>
       {/* <button
         onClick={() => {
           OnCheckOut();
