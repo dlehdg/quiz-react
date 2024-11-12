@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 const QuizPage = () => {
@@ -27,6 +28,10 @@ const QuizPage = () => {
   const [quiz, setQuiz] = useState("");
   const navigate = useNavigate();
 
+  const quizState = useSelector((state) => state.quizAuth);
+
+  const quizArr = quizState.arr;
+
   useEffect(() => {
     return () => {
       OnCheckOut();
@@ -35,6 +40,7 @@ const QuizPage = () => {
 
   const OnCheckOut = () => {
     setQuiz(params.productId);
+    console.log(quizArr);
   };
 
   return (

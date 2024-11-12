@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { SET_QUIZ } from "../../redux/slice/quizSlice";
 
 const Products = [
   { id: "1", title: "수도" },
@@ -53,6 +55,19 @@ const Products = [
 ];
 
 const QuizList = ({ size }) => {
+  const [text, setText] = useState("");
+
+  const dispatch = useDispatch();
+
+  const quizState = useSelector((state) => state.quizAuth);
+
+  const quizArr = quizState.arr;
+
+  const onSetQuiz = (productId) => {
+    dispatch(SET_QUIZ(productId));
+    console.log("현재 퀴즈 배열", quizArr);
+  };
+
   return (
     <QuizBg>
       {/* <QuizSpan>
@@ -68,13 +83,33 @@ const QuizList = ({ size }) => {
       {/* <QuizSpan>
         <Link to="/quiz">Quiz 맵 이동</Link>
       </QuizSpan> */}
-      {Products.slice(size - 8, size).map((props) => (
-        <QuizSpan key={props.id}>
-          <Link to={`/quiz/${props.id}`}>
-            <span>{props.title}</span>
-          </Link>
-        </QuizSpan>
-      ))}
+      {Products.slice(size - 8, size).map((props) => {
+        // const isQuizArr = quizArr.includes(Number(props.id));
+        const isQuizArr = quizArr.some((id) => id === Number(props.id));
+
+        const isQuizTest = () => {
+          console.log("test : ", isQuizArr, "과", quizArr);
+        };
+        // const isQuizArr = quizArr.some((id) => id === Number(props.id)); // some 메서드와 === 연산자 사용
+
+        isQuizTest();
+
+        return (
+          <QuizSpan
+            key={props.id}
+            style={{ backgroundColor: isQuizArr ? "black" : "white" }}
+          >
+            <Link
+              to={`/quiz/${props.id}`}
+              onClick={() => {
+                onSetQuiz(props.id);
+              }}
+            >
+              <span>{props.title}</span>
+            </Link>
+          </QuizSpan>
+        );
+      })}
     </QuizBg>
   );
 };
@@ -102,7 +137,7 @@ const QuizBg = styled.div`
 const QuizSpan = styled.div`
   width: 80px;
   height: 80px;
-  background-color: white;
+  // background-color: white;
   text-color: white;
   display: flex;
   align-items: center;
