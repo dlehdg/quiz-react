@@ -111,7 +111,7 @@ const QuizList = ({ size }) => {
             <Link
               to={`/quiz/${props.id}`}
               onClick={() => {
-                onSetQuiz(props.id);
+                // onSetQuiz(props.id);
               }}
             >
               <span>{props.title}</span>

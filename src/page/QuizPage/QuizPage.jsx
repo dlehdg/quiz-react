@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { SET_QUIZ } from "../../redux/slice/quizSlice";
 
 const QuizPage = () => {
   const params = useParams();
@@ -32,16 +33,24 @@ const QuizPage = () => {
 
   const quizArr = quizState.arr;
 
-  useEffect(() => {
-    return () => {
-      OnCheckOut();
-    };
-  }, [params.productId]);
 
-  const OnCheckOut = () => {
-    setQuiz(params.productId);
-    console.log(quizArr);
+  const dispatch = useDispatch();
+  
+  const onSetQuiz = (productId) => {
+    dispatch(SET_QUIZ(productId));
+    console.log("현재 퀴즈 배열", quizArr);
   };
+
+  // useEffect(() => {
+  //   return () => {
+  //     OnCheckOut();
+  //   };
+  // }, [params.productId]);
+
+  // const OnCheckOut = () => {
+  //   setQuiz(params.productId);
+  //   console.log(quizArr);
+  // };
 
   return (
     <div>
@@ -54,7 +63,9 @@ const QuizPage = () => {
     <br />
     <br />
 
-      <button>
+      <button onClick={() => {
+        onSetQuiz(params.productId);
+      }}>
 
       <Link to="/roulette">룰렛 페이지로</Link>
       </button>
