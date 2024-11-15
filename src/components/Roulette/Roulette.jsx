@@ -6,27 +6,27 @@ const Roulette = () => {
   const data = [
     {
       option: "Apple Vision Pro",
-      style: { backgroundColor: "gray", textColor: "white" },
+      style: { backgroundColor: "#8C5E58", textColor: "white" },
       percentage: 20,
     },
     {
       option: "LG TV",
-      style: { backgroundColor: "red", textColor: "white" },
+      style: { backgroundColor: "#F3F7F0", textColor: "red" },
       percentage: 20,
     },
     {
       option: "SAMSUNG 에어컨",
-      style: { backgroundColor: "blue", textColor: "white" },
+      style: { backgroundColor: "#19323C", textColor: "white" },
       percentage: 20,
     },
     {
       option: "꽝",
-      style: { backgroundColor: "white", textColor: "red" },
+      style: { backgroundColor: "#F2545B", textColor: "white" },
       percentage: 20,
     },
     {
       option: "샌드위치",
-      style: { backgroundColor: "black", textColor: "white" },
+      style: { backgroundColor: "#A93F55", textColor: "white" },
       percentage: 20,
     },
   ];

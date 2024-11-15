@@ -106,7 +106,7 @@ const QuizList = ({ size }) => {
         return (
           <QuizSpan
             key={props.id}
-            style={{ backgroundColor: isQuizArr ? "black" : "white" }}
+            style={{ backgroundColor: isQuizArr ? "red" : "white" }}
           >
             <Link
               to={`/quiz/${props.id}`}

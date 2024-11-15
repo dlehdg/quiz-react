@@ -9,6 +9,8 @@ const RoulettePage = () => {
       <span>RoulettePage 테스트</span>
       <Roulette />
 
+      <br />
+
       <button>
         <Link to="/">처음으로</Link>
       </button>

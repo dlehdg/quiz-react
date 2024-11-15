@@ -1,6 +1,7 @@
 import React from "react";
 import QuizList from "../../components/QuizList/QuizList";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
   return (
@@ -12,6 +13,9 @@ const MainPage = () => {
       <QuizList size={32} />
       <QuizList size={40} />
       <QuizList size={48} />
+      <button>
+        <Link to = "/random">랜덤 뽑기</Link>
+      </button>
     </MainBg>
   );
 };

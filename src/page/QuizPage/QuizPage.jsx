@@ -50,9 +50,19 @@ const QuizPage = () => {
       <span>{params.productId}번 문제</span>
       <br></br>
       <span>{Arrs[Number(quiz) - 1]?.text}</span>
-      <br></br>
+
+    <br />
+    <br />
+
+      <button>
+
       <Link to="/roulette">룰렛 페이지로</Link>
+      </button>
+
+
       <br />
+      <br/>
+
       <button>
         <Link to="/">홈으로</Link>
       </button>

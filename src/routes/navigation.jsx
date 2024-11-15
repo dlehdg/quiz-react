@@ -2,6 +2,7 @@ import React from "react";
 import MainPage from "../page/MainPage/MainPage";
 import QuizPage from "./../page/QuizPage/QuizPage";
 import RoulettePage from "../page/RoulettePage/RoulettePage";
+import RandomDraw from "../components/RandomDraw/RandomDraw";
 
 const navigationItems = [
   {
@@ -28,6 +29,12 @@ const navigationItems = [
     path: "/roulette",
     text: "룰렛 페이지",
     element: <RoulettePage />,
+  },
+  {
+    id: "randomroulette",
+    path: "/random",
+    text: "랜덤 룰렛 페이지",
+    element: <RandomDraw />,
   }
 ];
 
