@@ -22,6 +22,9 @@ const quizSlice = createSlice({
       }
     },
     REMOVE_QUIZ: (state, action) => {},
+    CHECK_QUIZ: (state, action) => {
+      state.number = action.payload;
+    },
   },
 });
 

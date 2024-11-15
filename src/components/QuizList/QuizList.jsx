@@ -63,6 +63,8 @@ const QuizList = ({ size }) => {
 
   const quizArr = quizState.arr;
 
+  const quizTest = quizArr.length;
+
   const onSetQuiz = (productId) => {
     dispatch(SET_QUIZ(productId));
     console.log("현재 퀴즈 배열", quizArr);
@@ -88,7 +90,14 @@ const QuizList = ({ size }) => {
         const isQuizArr = quizArr.some((id) => id === Number(props.id));
 
         const isQuizTest = () => {
-          console.log("test : ", isQuizArr, "과", quizArr);
+          console.log(
+            "test : ",
+            isQuizArr,
+            "과",
+            quizArr,
+            " 현재 배열 개수 :",
+            quizTest
+          );
         };
         // const isQuizArr = quizArr.some((id) => id === Number(props.id)); // some 메서드와 === 연산자 사용
 
