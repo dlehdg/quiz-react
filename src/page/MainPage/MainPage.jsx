@@ -2,12 +2,19 @@ import React from "react";
 import QuizList from "../../components/QuizList/QuizList";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const MainPage = () => {
   const navigate = useNavigate();
+
+  const quizArr = useSelector((state) => state.quizAuth.arr);
+
+  const quizArrLength = quizArr.length;
+
   return (
     <MainBg>
       <div>메인 페이지 테스트 중</div>
+      <div>{quizArrLength} 개 클리어</div>
       <QuizList size={8} />
       <QuizList size={16} />
       <QuizList size={24} />
@@ -39,6 +46,7 @@ const QuizRouletteButton = styled.button`
   font-weight: 600;
   color: #fff;
   cursor: pointer;
+  margin-top: 30px;
   margin-bottom: 30px;
   height: 55px;
   text-align: center;
