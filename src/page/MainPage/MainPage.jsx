@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import QuizList from "../../components/QuizList/QuizList";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const MainPage = () => {
+  const [check, setCheck] = useState(false);
+
   const navigate = useNavigate();
 
   const quizArr = useSelector((state) => state.quizAuth.arr);
 
   const quizArrLength = quizArr.length;
+
+  const CheckQuizArrLength = (state) => {
+    const number = Number(state);
+    if (number % 8 === 0) {
+      setCheck(true);
+    } else {
+      setCheck(false);
+    }
+  };
+
+  useEffect(() => {
+    CheckQuizArrLength(quizArrLength);
+  }, [quizArrLength]);
 
   return (
     <MainBg>
@@ -21,13 +36,15 @@ const MainPage = () => {
       <QuizList size={32} />
       <QuizList size={40} />
       <QuizList size={48} />
-      <QuizRouletteButton
-        onClick={() => {
-          navigate("/random");
-        }}
-      >
-        <span>랜덤 뽑기</span>
-      </QuizRouletteButton>
+      {check && (
+        <QuizRouletteButton
+          onClick={() => {
+            navigate("/random");
+          }}
+        >
+          <span>랜덤 뽑기</span>
+        </QuizRouletteButton>
+      )}
     </MainBg>
   );
 };
