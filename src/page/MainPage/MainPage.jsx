@@ -13,8 +13,8 @@ const MainPage = () => {
 
   const quizArrLength = quizArr.length;
 
-  const CheckQuizArrLength = (state) => {
-    const number = Number(state);
+  const CheckQuizArrLength = () => {
+    const number = Number(quizArrLength);
     if (number % 8 === 0) {
       setCheck(true);
     } else {
@@ -22,9 +22,21 @@ const MainPage = () => {
     }
   };
 
+  // useEffect(() => {
+  //   CheckQuizArrLength();
+  // }, [quizArr]);
+
   useEffect(() => {
-    CheckQuizArrLength(quizArrLength);
-  }, [quizArrLength]);
+    // quizArr이 변경될 때만 실행
+    if (quizArr.length > 0) {
+      const number = Number(quizArrLength);
+      if (number % 8 === 0) {
+        setCheck(true);
+      } else {
+        setCheck(false);
+      }
+    }
+  }, [quizArr]);
 
   return (
     <MainBg>
