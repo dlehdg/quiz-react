@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 const Roulette = () => {
   const data = [
@@ -88,7 +89,6 @@ const Roulette = () => {
 
   return (
     <div>
-      <span>Roulette</span>
       {/* <Wheel 
             spinDuration={0.2}
             startingOptionIndex={Math.floor(Math.random() * data.length)}
@@ -106,10 +106,56 @@ const Roulette = () => {
         textColors={["#ffffff"]}
         onStopSpinning={StopSpinning}
       />
-      <button onClick={handleSpinClick}>가챠</button>
+      <RouletteStartBtn onClick={handleSpinClick}>
+        <span>가챠</span>
+      </RouletteStartBtn>
       {/* <div>{prizeNumber}</div> */}
     </div>
   );
 };
 
 export default Roulette;
+
+const RouletteStartBtn = styled.button`
+  border: none;
+  display: block;
+
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 15px 120px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #78c7d2;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  }
+
+  &:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  }
+`;
