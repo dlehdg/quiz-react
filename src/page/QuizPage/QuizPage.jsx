@@ -168,7 +168,7 @@ const HomeButton = styled.button`
   font-weight: 600;
   color: #fff;
   cursor: pointer;
-  margin-bottom: 30px;
+  margin: 10px;
   height: 55px;
   text-align: center;
   border: none;
@@ -182,12 +182,13 @@ const HomeButton = styled.button`
 
   background-image: linear-gradient(
     to right,
-    #f5ce62,
-    #e43603,
-    #fa7199,
-    #e85a19
+    #25aae1,
+    #40e495,
+    #30dd8a,
+    #2bb673
   );
-  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+
   &:hover {
     background-position: 100% 0;
     moz-transition: all 0.4s ease-in-out;

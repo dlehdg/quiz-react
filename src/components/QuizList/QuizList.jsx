@@ -7,7 +7,7 @@ import { SET_QUIZ } from "../../redux/slice/quizSlice";
 const Products = [
   { id: "1", title: "수도" },
   { id: "2", title: "동화" },
-  { id: "3", title: "Quiz3" },
+  { id: "3", title: "동화" },
   { id: "4", title: "Quiz4" },
   { id: "5", title: "Quiz5" },
   { id: "6", title: "Quiz6" },
@@ -106,10 +106,11 @@ const QuizList = ({ size }) => {
         return (
           <QuizSpan
             key={props.id}
-            style={{ backgroundColor: isQuizArr ? "red" : "white" }}
+            style={{ backgroundColor: isQuizArr ? "black" : "red" }}
           >
             <Link
               to={`/quiz/${props.id}`}
+              style={{ textDecoration: "none" }}
               onClick={() => {
                 // onSetQuiz(props.id);
               }}
@@ -128,15 +129,12 @@ export default QuizList;
 const QuizBg = styled.div`
   width: auto;
   height: 100px;
-  background-color: red;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px 20px;
   margin-top: 20px;
   margin-bottom: 5px;
   margin-left: 20px;
@@ -146,11 +144,63 @@ const QuizBg = styled.div`
 const QuizSpan = styled.div`
   width: 80px;
   height: 80px;
-  // background-color: white;
+  font-size: 1.5rem;
   text-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border: 5px solid #000;
+
+  span {
+    color: #fff;
+  }
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 8px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 10px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+
+  // background-image:
+  //   ({ isQuizArr }) =>
+  //     isQuizArr
+  //       ? "linear-gradient(to right, #fff, #ff0)" // isQuizArr이 true일 때 적용
+  //       : "linear-gradient(to right, #29323c, #485563, #2b5876 , #4e4376)" // isQuizArr이 false일 때 적용
+  // };
+
+  // background-image: linear-gradient(
+  //   to right,
+  //   #29323c,
+  //   #485563,
+  //   #2b5876,
+  //   #4e4376
+  // );
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+  &:hover {
+    background-position: 100% 0;
+    moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
 `;
+
+// const QuizSpan = styled.div`
+//   width: 80px;
+//   height: 80px;
+//   // background-color: white;
+//   text-color: white;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+//   border: 5px solid #000;
+// `;
