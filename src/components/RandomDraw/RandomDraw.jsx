@@ -2,32 +2,33 @@ import { Rating } from "@mui/material";
 import React, { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 const RandomDraw = () => {
   const data = [
     {
       option: "Apple Vision Pro",
-      style: { backgroundColor: "#8C5E58", textColor: "white" },
+      style: { backgroundColor: "#DDF8E8", textColor: "white" },
       percentage: 20,
     },
     {
       option: "LG TV",
-      style: { backgroundColor: "#F3F7F0", textColor: "red" },
+      style: { backgroundColor: "#CDD5D1", textColor: "white" },
       percentage: 20,
     },
     {
       option: "SAMSUNG 에어컨",
-      style: { backgroundColor: "#19323C", textColor: "white" },
+      style: { backgroundColor: "#B4A6AB", textColor: "white" },
       percentage: 20,
     },
     {
       option: "꽝",
-      style: { backgroundColor: "#F2545B", textColor: "white" },
+      style: { backgroundColor: "#946E83", textColor: "white" },
       percentage: 20,
     },
     {
       option: "샌드위치",
-      style: { backgroundColor: "#A93F55", textColor: "white" },
+      style: { backgroundColor: "#615055", textColor: "white" },
       percentage: 20,
     },
   ];
@@ -107,7 +108,9 @@ const RandomDraw = () => {
         textColors={["#ffffff"]}
         onStopSpinning={StopSpinning}
       />
-      <button onClick={handleSpinClick}>가챠</button>
+      <RouletteStartBtn onClick={handleSpinClick}>
+        <span>가챠</span>
+      </RouletteStartBtn>
       {/* <div>{prizeNumber}</div> */}
 
       {/* <Rating name="half-rating" defaultValue={2.5} precision={0.5} /> */}
@@ -116,3 +119,47 @@ const RandomDraw = () => {
 };
 
 export default RandomDraw;
+
+const RouletteStartBtn = styled.button`
+  border: none;
+  display: block;
+
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 15px 120px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #78c7d2;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  }
+
+  &:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  }
+`;

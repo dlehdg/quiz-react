@@ -7,28 +7,53 @@ const Roulette = () => {
   const data = [
     {
       option: "Apple Vision Pro",
-      style: { backgroundColor: "#8C5E58", textColor: "white" },
-      percentage: 20,
+      style: { backgroundColor: "red", textColor: "white" },
+      percentage: 10,
     },
     {
       option: "LG TV",
-      style: { backgroundColor: "#F3F7F0", textColor: "red" },
-      percentage: 20,
+      style: { backgroundColor: "orange", textColor: "red" },
+      percentage: 10,
     },
     {
       option: "SAMSUNG 에어컨",
-      style: { backgroundColor: "#19323C", textColor: "white" },
-      percentage: 20,
+      style: { backgroundColor: "yellow", textColor: "white" },
+      percentage: 10,
     },
     {
       option: "꽝",
-      style: { backgroundColor: "#F2545B", textColor: "white" },
-      percentage: 20,
+      style: { backgroundColor: "green", textColor: "white" },
+      percentage: 10,
     },
     {
-      option: "샌드위치",
-      style: { backgroundColor: "#A93F55", textColor: "white" },
-      percentage: 20,
+      option: "10점",
+      style: { backgroundColor: "blue", textColor: "white" },
+      percentage: 10,
+    },
+    {
+      option: "20점",
+      style: { backgroundColor: "navy", textColor: "white" },
+      percentage: 10,
+    },
+    {
+      option: "30점",
+      style: { backgroundColor: "purple", textColor: "white" },
+      percentage: 10,
+    },
+    {
+      option: "40점",
+      style: { backgroundColor: "black", textColor: "white" },
+      percentage: 10,
+    },
+    {
+      option: "50점",
+      style: { backgroundColor: "white", textColor: "red" },
+      percentage: 10,
+    },
+    {
+      option: "60점",
+      style: { backgroundColor: "gray", textColor: "white" },
+      percentage: 10,
     },
   ];
 

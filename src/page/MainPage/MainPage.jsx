@@ -40,8 +40,10 @@ const MainPage = () => {
 
   return (
     <MainBg>
-      <div>메인 페이지 테스트 중</div>
-      <div>{quizArrLength} 개 클리어</div>
+      <MainHeader>
+        <div>메인 페이지 테스트 중</div>
+        <div>{quizArrLength} 개 클리어</div>
+      </MainHeader>
       <QuizList size={8} />
       <QuizList size={16} />
       <QuizList size={24} />
@@ -102,5 +104,20 @@ const QuizRouletteButton = styled.button`
     -o-transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
+  }
+`;
+
+const MainHeader = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  div:first-child {
+    margin-right: 80px; // 두 번째 div와의 간격 조절
+  }
+
+  div:last-child {
+    text-align: right; // 두 번째 div를 오른쪽 정렬
   }
 `;
