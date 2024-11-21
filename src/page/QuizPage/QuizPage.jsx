@@ -331,7 +331,7 @@ const QuizPage = () => {
       <span>{params.productId}번 문제</span>
 
       <QuizTextBox>
-        <QuizText>{Arrs[Number(quiz) - 1 || "데이터 없음"]?.text}</QuizText>
+        <QuizText>{Arrs[Number(quiz) - 1]?.text || "데이터 없음"}</QuizText>
       </QuizTextBox>
 
       <RouletteButton
@@ -396,7 +396,7 @@ const QuizTextBox = styled.div`
 `;
 
 const QuizText = styled.span`
-  // color: #fff;
+  color: #fff;
 `;
 
 const RouletteButton = styled.button`
