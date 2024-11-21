@@ -6,52 +6,52 @@ import styled from "styled-components";
 const Roulette = () => {
   const data = [
     {
-      option: "Apple Vision Pro",
+      option: "10점",
       style: { backgroundColor: "red", textColor: "white" },
       percentage: 10,
     },
     {
-      option: "LG TV",
+      option: "20점",
       style: { backgroundColor: "orange", textColor: "red" },
       percentage: 10,
     },
     {
-      option: "SAMSUNG 에어컨",
+      option: "30점",
       style: { backgroundColor: "yellow", textColor: "white" },
       percentage: 10,
     },
     {
-      option: "꽝",
+      option: "40점",
       style: { backgroundColor: "green", textColor: "white" },
       percentage: 10,
     },
     {
-      option: "10점",
+      option: "50점",
       style: { backgroundColor: "blue", textColor: "white" },
       percentage: 10,
     },
     {
-      option: "20점",
+      option: "60점",
       style: { backgroundColor: "navy", textColor: "white" },
       percentage: 10,
     },
     {
-      option: "30점",
+      option: "70점",
       style: { backgroundColor: "purple", textColor: "white" },
       percentage: 10,
     },
     {
-      option: "40점",
+      option: "80점",
       style: { backgroundColor: "black", textColor: "white" },
       percentage: 10,
     },
     {
-      option: "50점",
+      option: "90점",
       style: { backgroundColor: "white", textColor: "red" },
       percentage: 10,
     },
     {
-      option: "60점",
+      option: "100점",
       style: { backgroundColor: "gray", textColor: "white" },
       percentage: 10,
     },

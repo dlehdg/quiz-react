@@ -42,7 +42,7 @@ const MainPage = () => {
     <MainBg>
       <MainHeader>
         <div>메인 페이지 테스트 중</div>
-        <div>{quizArrLength} 개 클리어</div>
+        <div햐>{quizArrLength} 개 클리어</div햐>
       </MainHeader>
       <QuizList size={8} />
       <QuizList size={16} />
@@ -50,6 +50,7 @@ const MainPage = () => {
       <QuizList size={32} />
       <QuizList size={40} />
       <QuizList size={48} />
+      <QuizList size={56} />
       {check && (
         <QuizRouletteButton
           onClick={() => {
