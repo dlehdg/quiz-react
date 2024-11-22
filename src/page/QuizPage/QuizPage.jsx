@@ -10,8 +10,7 @@ const QuizPage = () => {
   const Arrs = [
     {
       id: "1",
-      text: `이 소설은 이효석 작가의 단편소설로 1936년 10월 조선일보사에서 처음 발행되었으며, 대한민국 국민이라면 누구나 한번쯤 읽었을 정도로 인지도가 있는 작품이다 배격은 강원도 평창군의 한 마을을 소재로 하였고,  
-      장돌뱅이인 허 생원과 조선달과의 이야기를 중심으로 장돌뱅이의 삶을 말해주며 성 서방네 처녀 이야기를 회상한 작품이다. 이 작품의 이름은 무엇인가"`,
+      text: "대한민국 수도는?",
       author: "메밀꽃 필 무렵",
     },
     {
@@ -68,236 +67,6 @@ const QuizPage = () => {
       text: ``,
       author: "",
     },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
-    {
-      id: "6",
-      text: ``,
-      author: "",
-    },
   ];
 
   const [quiz, setQuiz] = useState("");
@@ -320,17 +89,21 @@ const QuizPage = () => {
     };
   }, [params.productId]);
 
+  useEffect(() => {
+    console.log("테스트중 :", Arrs[Number(quiz) - 1]?.text);
+  }, []);
+
   const OnCheckOut = () => {
     setQuiz(params.productId);
 
-    console.log(quizArr);
+    console.log(Arrs[Number(quiz) - 1]?.text);
   };
 
   return (
     <QuizBaground>
       <span>{params.productId}번 문제</span>
 
-      <QuizTextBox>{Arrs[Number(quiz) - 1]?.text || "데이터 없음"}</QuizTextBox>
+      <QuizTextBox>{Arrs[Number(quiz) - 1]?.text || "데이터 삭제"}</QuizTextBox>
 
       <RouletteButton
         onClick={() => {
