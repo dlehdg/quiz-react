@@ -78,8 +78,8 @@ const QuizPage = () => {
 
   const dispatch = useDispatch();
 
-  const onSetQuiz = (productId) => {
-    dispatch(SET_QUIZ(productId));
+  const onSetQuiz = async (productId) => {
+    await dispatch(SET_QUIZ(productId));
     console.log("현재 퀴즈 배열", quizArr);
   };
 
@@ -167,7 +167,7 @@ const QuizTextBox = styled.div`
 `;
 
 const QuizText = styled.span`
-  color: #fff;
+  color: white;
 `;
 
 const RouletteButton = styled.button`
