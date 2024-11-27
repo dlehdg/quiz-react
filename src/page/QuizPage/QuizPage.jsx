@@ -7,6 +7,9 @@ import styled from "styled-components";
 const QuizPage = () => {
   const params = useParams();
 
+  const [quiz, setQuiz] = useState("");
+  const navigate = useNavigate();
+
   const Arrs = [
     {
       id: "1",
@@ -69,8 +72,7 @@ const QuizPage = () => {
     },
   ];
 
-  const [quiz, setQuiz] = useState("");
-  const navigate = useNavigate();
+  const [currentQuiz, setCurrentQuiz] = useState();
 
   const quizState = useSelector((state) => state.quizAuth);
 
@@ -91,7 +93,7 @@ const QuizPage = () => {
 
   useEffect(() => {
     console.log("테스트중 :", Arrs[Number(quiz) - 1]?.text);
-  }, []);
+  }, [quiz]);
 
   const OnCheckOut = () => {
     setQuiz(params.productId);
