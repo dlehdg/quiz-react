@@ -72,7 +72,7 @@ const QuizPage = () => {
     },
   ];
 
-  const [currentQuiz, setCurrentQuiz] = useState();
+  const [currentQuiz, setCurrentQuiz] = useState("");
 
   const quizState = useSelector((state) => state.quizAuth);
 
@@ -82,30 +82,27 @@ const QuizPage = () => {
 
   const onSetQuiz = async (productId) => {
     await dispatch(SET_QUIZ(productId));
-    console.log("현재 퀴즈 배열", quizArr);
+    // console.log("현재 퀴즈 배열", quizArr);
   };
 
   useEffect(() => {
+    if (params.productId) {
+      setQuiz(Number(params.productId));
+    }
+
     return () => {
-      OnCheckOut();
+      console.log("테스트중 :", Arrs[Number(quiz) - 1]?.text);
+      console.log("현재 params:", params);
+      console.log("현재 quiz 상태:", quiz);
+      console.log("Arrs 배열:", Arrs);
     };
   }, [params.productId]);
-
-  useEffect(() => {
-    console.log("테스트중 :", Arrs[Number(quiz) - 1]?.text);
-  }, [quiz]);
-
-  const OnCheckOut = () => {
-    setQuiz(params.productId);
-
-    console.log(Arrs[Number(quiz) - 1]?.text);
-  };
 
   return (
     <QuizBaground>
       <span>{params.productId}번 문제</span>
 
-      <QuizTextBox>{Arrs[Number(quiz) - 1]?.text || "데이터 삭제"}</QuizTextBox>
+      <QuizTextBox>{Arrs[quiz - 1]?.text || "데이터 삭제"}</QuizTextBox>
 
       <RouletteButton
         onClick={() => {

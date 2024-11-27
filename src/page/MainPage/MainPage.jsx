@@ -42,7 +42,7 @@ const MainPage = () => {
     <MainBg>
       <MainHeader>
         <div>메인 페이지 테스트 중</div>
-        <div햐>{quizArrLength} 개 클리어</div햐>
+        <div>{quizArrLength} 개 클리어</div>
       </MainHeader>
       <QuizList size={8} />
       <QuizList size={16} />
