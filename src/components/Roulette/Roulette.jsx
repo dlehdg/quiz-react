@@ -1,3 +1,4 @@
+import { style } from "framer-motion/client";
 import React, { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 import { useNavigate } from "react-router-dom";
@@ -113,7 +114,7 @@ const Roulette = () => {
   };
 
   return (
-    <div>
+    <Div>
       {/* <Wheel 
             spinDuration={0.2}
             startingOptionIndex={Math.floor(Math.random() * data.length)}
@@ -135,11 +136,21 @@ const Roulette = () => {
         <span>가챠</span>
       </RouletteStartBtn>
       {/* <div>{prizeNumber}</div> */}
-    </div>
+    </Div>
   );
 };
 
 export default Roulette;
+
+const Div = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // item-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+`;
 
 const RouletteStartBtn = styled.button`
   border: none;

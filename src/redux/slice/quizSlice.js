@@ -21,6 +21,7 @@ const quizSlice = createSlice({
         state.arr.push(newIndexId);
       }
     },
+
     REMOVE_QUIZ: (state, action) => {},
     CHECK_QUIZ: (state, action) => {
       state.number = action.payload;

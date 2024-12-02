@@ -135,7 +135,7 @@ export default QuizList;
 const QuizBg = styled.div`
   width: auto;
   height: 100px;
-  background-color: white;
+  // background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;

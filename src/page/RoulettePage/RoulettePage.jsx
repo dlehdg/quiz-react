@@ -26,15 +26,23 @@ export default RoulettePage;
 
 const Div = styled.div`
   gap: 5px;
-  width: auto
+  width: 100%;
+  height: auto;
   // background-image: url("/images/casino.webp");
-  // background-color: black;
+  background-color: #1e1f24;
   background-size: cover;
   display: flex;
   flex-direction: column;
   item-align: center;
   justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  color: #fff;
   gap: 20px;
+  border-radius: 10px;
 `;
 
 const BackHome = styled.button`

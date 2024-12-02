@@ -68,6 +68,14 @@ export default MainPage;
 
 const MainBg = styled.div`
   width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: #1e1f24;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  border-radius: 10px;
 `;
 
 const QuizRouletteButton = styled.button`
@@ -113,6 +121,9 @@ const MainHeader = styled.div`
   align-items: center;
   text-align: center;
   justify-content: center;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 10px;
 
   div:first-child {
     margin-right: 80px; // 두 번째 div와의 간격 조절
