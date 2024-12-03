@@ -20,7 +20,7 @@ const Products = [
   { id: "13", title: "게임2" },
   { id: "14", title: "아이스크림" },
   { id: "15", title: "수학" },
-  { id: "16", title: "영화" },
+  { id: "16", title: "영화1" },
   { id: "17", title: "국어" },
   { id: "18", title: "다섯고개1" },
   { id: "19", title: "다섯고개2" },
@@ -46,7 +46,7 @@ const Products = [
   { id: "39", title: "태극기" },
   { id: "40", title: "계절" },
   { id: "41", title: "경제" },
-  { id: "42", title: "인물" },
+  { id: "42", title: "인물3" },
   { id: "43", title: "자연재해" },
   { id: "44", title: "의학" },
   { id: "45", title: "동화" },
@@ -59,8 +59,8 @@ const Products = [
   { id: "52", title: "군대2" },
   { id: "53", title: "국가" },
   { id: "54", title: "보석" },
-  { id: "55", title: "심리학" },
-  { id: "56", title: "영화" },
+  { id: "55", title: "심리학3" },
+  { id: "56", title: "영화2" },
 ];
 
 const QuizList = ({ size }) => {
