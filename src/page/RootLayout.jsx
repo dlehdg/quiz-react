@@ -14,13 +14,12 @@ export default RootLayout;
 
 const Divs = styled.div`
   width: auto;
-  height: 1100px;
+  height: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #000;
 
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   // border: 3px solid black;
 `;

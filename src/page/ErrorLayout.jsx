@@ -22,4 +22,5 @@ const Ero = styled.div`
   display: flex;
   flex-direction: flex-col;
   align-items: items-center;
+  color: white;
 `;
