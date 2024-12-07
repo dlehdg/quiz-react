@@ -3,6 +3,7 @@ import MainPage from "../page/MainPage/MainPage";
 import QuizPage from "./../page/QuizPage/QuizPage";
 import RoulettePage from "../page/RoulettePage/RoulettePage";
 import RandomDraw from "../components/RandomDraw/RandomDraw";
+import CardPage from "../page/CardPage/CardPage";
 
 const navigationItems = [
   {
@@ -35,7 +36,13 @@ const navigationItems = [
     path: "/random",
     text: "랜덤 룰렛 페이지",
     element: <RandomDraw />,
-  }
+  },
+  {
+    id: "card",
+    path: "/card",
+    text: "카드 페이지",
+    element: <CardPage />,
+  },
 ];
 
 export default navigationItems;
