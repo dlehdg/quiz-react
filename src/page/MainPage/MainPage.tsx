@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import QuizList from "../../components/QuizList/QuizList";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import QuizList from "../../components/QuizList/QuizList";
 
 const MainPage = () => {
   const [check, setCheck] = useState(false);
 
   const navigate = useNavigate();
 
-  const quizArr = useSelector((state) => state.quizAuth.arr);
+  const quizArr = useSelector((state : RootState) => state.quizAuth.arr);
 
   const quizArrLength = quizArr.length;
 

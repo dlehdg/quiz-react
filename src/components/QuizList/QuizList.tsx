@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { SET_QUIZ } from "../../redux/slice/quizSlice";
+import { RootState } from "../../redux/store";
 
 const Products = [
   { id: "1", title: "수도" },
@@ -63,18 +64,18 @@ const Products = [
   { id: "56", title: "영화2" },
 ];
 
-const QuizList = ({ size }) => {
+const QuizList = ({ size }: {size: number}) => {
   const [text, setText] = useState("");
 
   const dispatch = useDispatch();
 
-  const quizState = useSelector((state) => state.quizAuth);
+  const quizState = useSelector((state : RootState) => state.quizAuth);
 
   const quizArr = quizState.arr;
 
   const quizTest = quizArr.length;
 
-  const onSetQuiz = (productId) => {
+  const onSetQuiz = (productId : string) => {
     dispatch(SET_QUIZ(productId));
     // console.log("현재 퀴즈 배열", quizArr);
   };

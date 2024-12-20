@@ -1,6 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IQuiz } from './../../types/index';
+import { RootState } from "../store";
 
-const initialState = {
+interface IQuizState {
+  isCheckedIn: boolean;
+  quizId: null | string;
+  arr: number[];
+  number: number;
+}
+
+
+const initialState : IQuizState = {
   isCheckedIn: false,
   quizId: null,
   arr: [],
@@ -28,6 +38,9 @@ const quizSlice = createSlice({
     },
   },
 });
+
+
+export const selectQuiz = (state: RootState) => state.quizAuth.arr;
 
 export const { SET_QUIZ, REMOVE_QUIZ } = quizSlice.actions;
 

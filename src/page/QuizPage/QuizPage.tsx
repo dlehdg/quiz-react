@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { SET_QUIZ } from "../../redux/slice/quizSlice";
 import styled from "styled-components";
+import { RootState } from "../../redux/store";
 
 const QuizPage = () => {
   const params = useParams();
 
-  const [quiz, setQuiz] = useState("");
+  const [quiz, setQuiz] = useState(0);
   const navigate = useNavigate();
 
   const Arrs = [
@@ -394,13 +395,13 @@ ex)힌트 10월31일(할로윈데이)`,
 
   const [currentQuiz, setCurrentQuiz] = useState("");
 
-  const quizState = useSelector((state) => state.quizAuth);
+  const quizState = useSelector((state : RootState) => state.quizAuth);
 
   const quizArr = quizState.arr;
 
   const dispatch = useDispatch();
 
-  const onSetQuiz = async (productId) => {
+  const onSetQuiz = async (productId : undefined | string) => {
     await dispatch(SET_QUIZ(productId));
     // console.log("현재 퀴즈 배열", quizArr);
   };

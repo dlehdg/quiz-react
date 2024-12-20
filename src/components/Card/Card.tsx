@@ -9,7 +9,7 @@ const Card = () => {
       </Front>
 
       <Back>
-        <spna>뒷면</spna>
+        <span>뒷면</span>
       </Back>
     </>
   )

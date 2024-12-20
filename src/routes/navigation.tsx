@@ -1,6 +1,6 @@
 import React from "react";
 import MainPage from "../page/MainPage/MainPage";
-import QuizPage from "./../page/QuizPage/QuizPage";
+import QuizPage from "../page/QuizPage/QuizPage";
 import RoulettePage from "../page/RoulettePage/RoulettePage";
 import RandomDraw from "../components/RandomDraw/RandomDraw";
 import CardPage from "../page/CardPage/CardPage";
