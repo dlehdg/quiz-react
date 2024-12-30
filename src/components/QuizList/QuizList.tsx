@@ -62,6 +62,22 @@ const Products = [
   { id: "54", title: "보석" },
   { id: "55", title: "심리학3" },
   { id: "56", title: "영화2" },
+  { id: "57", title: "역사3" },
+  { id: "58", title: "게임3" },
+  { id: "59", title: "IT" },
+  { id: "60", title: "언어" },
+  { id: "61", title: "유래" },
+  { id: "62", title: "전통2" },
+  { id: "63", title: "지리" },
+  { id: "64", title: "영화2" },
+  { id: "65", title: "영화2" },
+  { id: "66", title: "영화2" },
+  { id: "67", title: "영화2" },
+  { id: "68", title: "영화2" },
+  { id: "69", title: "일심동체" },
+  { id: "70", title: "기억력" },
+  { id: "71", title: "로보77" },
+  { id: "72", title: "마피아게임" },
 ];
 
 const QuizList = ({ size }: {size: number}) => {

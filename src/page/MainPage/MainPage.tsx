@@ -52,6 +52,8 @@ const MainPage = () => {
       <QuizList size={40} />
       <QuizList size={48} />
       <QuizList size={56} />
+      <QuizList size={64} />
+      <QuizList size={72} />
       {check && (
         <QuizRouletteButton
           onClick={() => {
