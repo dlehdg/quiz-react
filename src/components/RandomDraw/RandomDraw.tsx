@@ -7,17 +7,17 @@ import styled from "styled-components";
 const RandomDraw = () => {
   const data = [
     {
-      option: "Apple Vision Pro",
+      option: "행운 카드",
       style: { backgroundColor: "#DDF8E8", textColor: "white" },
       percentage: 20,
     },
     {
-      option: "LG TV",
+      option: "10점",
       style: { backgroundColor: "#CDD5D1", textColor: "white" },
       percentage: 20,
     },
     {
-      option: "SAMSUNG 에어컨",
+      option: "상품",
       style: { backgroundColor: "#B4A6AB", textColor: "white" },
       percentage: 20,
     },
@@ -27,7 +27,7 @@ const RandomDraw = () => {
       percentage: 20,
     },
     {
-      option: "샌드위치",
+      option: "행운 카드",
       style: { backgroundColor: "#615055", textColor: "white" },
       percentage: 20,
     },
