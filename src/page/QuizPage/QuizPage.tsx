@@ -555,7 +555,6 @@ const QuizBaground = styled.div`
   gap: 10px;
 `;
 
-const NumberBox = styled.div``;
 
 const QuizTextBox = styled.div`
   width: 80%;
