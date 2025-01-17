@@ -12,7 +12,7 @@ const RoulettePage = () => {
 
   return (
     <Div>
-      <span>RoulettePage 테스트</span>
+      <span>가챠</span>
       <Roulette />
 
       <BackHome onClick={onBackHome}>

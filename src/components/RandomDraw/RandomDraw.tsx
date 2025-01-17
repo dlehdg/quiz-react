@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { RootState } from "../../redux/store";
+import { useSelector } from "react-redux";
 
 const RandomDraw = () => {
   const data = [
@@ -27,7 +29,7 @@ const RandomDraw = () => {
       percentage: 20,
     },
     {
-      option: "행운 카드",
+      option: "경매",
       style: { backgroundColor: "#615055", textColor: "white" },
       percentage: 20,
     },
@@ -79,6 +81,9 @@ const RandomDraw = () => {
     }
   };
 
+
+  const randomCheck = useSelector((state: RootState) => state.quizAuth.number);
+
   // 룰렛 애니메이션이 멈출 때 실행되는 함수
 
   const StopSpinning = () => {
@@ -90,7 +95,7 @@ const RandomDraw = () => {
 
   return (
     <div>
-      <span>Roulette</span>
+      <RandomMenu>{randomCheck} 번째 가챠</RandomMenu>
       {/* <Wheel 
             spinDuration={0.2}
             startingOptionIndex={Math.floor(Math.random() * data.length)}
@@ -119,6 +124,12 @@ const RandomDraw = () => {
 };
 
 export default RandomDraw;
+
+
+const RandomMenu = styled.span`
+  color: #fff;
+`
+
 
 const RouletteStartBtn = styled.button`
   border: none;

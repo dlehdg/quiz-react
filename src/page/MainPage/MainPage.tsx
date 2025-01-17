@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import QuizList from "../../components/QuizList/QuizList";
+import { CHECK_RANDONBOX } from "../../redux/slice/quizSlice";
 
 const MainPage = () => {
   const [check, setCheck] = useState(false);
@@ -13,6 +14,11 @@ const MainPage = () => {
   const quizArr = useSelector((state : RootState) => state.quizAuth.arr);
 
   const quizArrLength = quizArr.length;
+
+  const randomCheck = useSelector((state: RootState) => state.quizAuth.number);
+
+  const dispatch = useDispatch();
+
 
   const CheckQuizArrLength = () => {
     const number = Number(quizArrLength);
@@ -26,6 +32,14 @@ const MainPage = () => {
   // useEffect(() => {
   //   CheckQuizArrLength();
   // }, [quizArr]);
+
+
+  const onCheckNum = async () => {
+      let num = Number(randomCheck);
+      num++;
+      await dispatch(CHECK_RANDONBOX(num));
+      // console.log("현재 퀴즈 배열", quizArr);
+    };
 
   useEffect(() => {
     // quizArr이 변경될 때만 실행
@@ -57,6 +71,7 @@ const MainPage = () => {
       {check && (
         <QuizRouletteButton
           onClick={() => {
+            onCheckNum();
             navigate("/random");
           }}
         >

@@ -32,7 +32,9 @@ const quizSlice = createSlice({
       }
     },
 
-    REMOVE_QUIZ: (state, action) => {},
+    CHECK_RANDONBOX: (state, action) => {
+      state.number = action.payload;
+    },
     CHECK_QUIZ: (state, action) => {
       state.number = action.payload;
     },
@@ -42,6 +44,6 @@ const quizSlice = createSlice({
 
 export const selectQuiz = (state: RootState) => state.quizAuth.arr;
 
-export const { SET_QUIZ, REMOVE_QUIZ } = quizSlice.actions;
+export const { SET_QUIZ, CHECK_RANDONBOX } = quizSlice.actions;
 
 export default quizSlice;
