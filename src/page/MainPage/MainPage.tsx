@@ -5,8 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import QuizList from "../../components/QuizList/QuizList";
 import { CHECK_RANDONBOX } from "../../redux/slice/quizSlice";
+import Pagination from "../../components/pagination/Pagination";
 
 const MainPage = () => {
+
+  // pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage, setProductsPerPage] = useState(10);
+
+
   const [check, setCheck] = useState(false);
 
   const navigate = useNavigate();
@@ -19,6 +26,7 @@ const MainPage = () => {
 
   const dispatch = useDispatch();
 
+  const [pageNumberIndex, setPageNumberIndex] = useState(1);
 
   const CheckQuizArrLength = () => {
     const number = Number(quizArrLength);
@@ -54,20 +62,22 @@ const MainPage = () => {
   }, [quizArr]);
 
   return (
+    <>
     <MainBg>
       <MainHeader>
-        <div>메인 페이지 테스트 중</div>
+        <div>메인 페이지</div>
         <div>{quizArrLength} 개 클리어</div>
+        {/* <div>{currentPage} 위치</div> */}
       </MainHeader>
-      <QuizList size={8} />
-      <QuizList size={16} />
+      <QuizList size={currentPage * 8} />
+      {/* <QuizList size={16} />
       <QuizList size={24} />
       <QuizList size={32} />
       <QuizList size={40} />
       <QuizList size={48} />
       <QuizList size={56} />
       <QuizList size={64} />
-      <QuizList size={72} />
+      <QuizList size={72} /> */}
       {check && (
         <QuizRouletteButton
           onClick={() => {
@@ -78,11 +88,22 @@ const MainPage = () => {
           <span>랜덤 뽑기</span>
         </QuizRouletteButton>
       )}
+
+      <Pagination 
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalProducts={72}
+        productsPage={productsPerPage}
+      />
     </MainBg>
+    </>
+
   );
 };
 
 export default MainPage;
+
+
 
 const MainBg = styled.div`
   width: 100%;
@@ -150,4 +171,5 @@ const MainHeader = styled.div`
   div:last-child {
     text-align: right; // 두 번째 div를 오른쪽 정렬
   }
+
 `;

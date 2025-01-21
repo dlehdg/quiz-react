@@ -40,6 +40,8 @@ const RandomDraw = () => {
 
   const navigate = useNavigate();
 
+
+  
   // 룰렛 애니메이션을 실행시킬 함수
   const handleSpinClick = () => {
     if (!mustSpin) {
@@ -128,6 +130,7 @@ export default RandomDraw;
 
 const RandomMenu = styled.span`
   color: #fff;
+  
 `
 
 
