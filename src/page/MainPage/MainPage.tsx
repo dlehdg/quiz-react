@@ -6,6 +6,9 @@ import { RootState } from "../../redux/store";
 import QuizList from "../../components/QuizList/QuizList";
 import { CHECK_RANDONBOX } from "../../redux/slice/quizSlice";
 import Pagination from "../../components/pagination/Pagination";
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const MainPage = () => {
 
@@ -37,6 +40,16 @@ const MainPage = () => {
     }
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,      
+    arrows: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    
+  };
+
   // useEffect(() => {
   //   CheckQuizArrLength();
   // }, [quizArr]);
@@ -63,21 +76,43 @@ const MainPage = () => {
 
   return (
     <>
+    {/* <BlueImage> */}
+      {/* <div className="slider-container" style={{ width: '40%', margin: '0 auto'  }}>
+      <Slider {...settings} >
+
+
+        <div>
+            <img src="/images/momoi-momo.webp" alt="움짤 테스트중"/>
+            
+        </div>
+        <div>
+            <img src="/images/blue-archive-alice-tendou.webp" alt="움짤 테스트중"/>
+        
+        </div>
+        <div>
+            <img src="/images/anime-blue-archive.webp" alt="움짤 테스트중"/>
+        
+        </div>
+      </Slider>
+      </div> */}
+
+    {/* </BlueImage> */}
     <MainBg>
       <MainHeader>
         <div>메인 페이지</div>
         <div>{quizArrLength} 개 클리어</div>
         {/* <div>{currentPage} 위치</div> */}
       </MainHeader>
-      <QuizList size={currentPage * 8} />
-      {/* <QuizList size={16} />
+      {/* <QuizList size={currentPage * 8} /> */}
+      <QuizList size={8} />
+      <QuizList size={16} />
       <QuizList size={24} />
       <QuizList size={32} />
       <QuizList size={40} />
       <QuizList size={48} />
       <QuizList size={56} />
       <QuizList size={64} />
-      <QuizList size={72} /> */}
+      <QuizList size={72} />
       {check && (
         <QuizRouletteButton
           onClick={() => {
@@ -89,12 +124,12 @@ const MainPage = () => {
         </QuizRouletteButton>
       )}
 
-      <Pagination 
+      {/* <Pagination 
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         totalProducts={72}
         productsPage={productsPerPage}
-      />
+      /> */}
     </MainBg>
     </>
 
@@ -103,7 +138,14 @@ const MainPage = () => {
 
 export default MainPage;
 
-
+const BlueImage = styled.div`
+  // display : flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // gap: 2em;
+  background-color: #fff;
+  color: #000;
+`
 
 const MainBg = styled.div`
   width: 100%;

@@ -15,9 +15,9 @@ const RoulettePage = () => {
       <span>가챠</span>
       <Roulette />
 
-      <BackHome onClick={onBackHome}>
+      {/* <BackHome onClick={onBackHome}>
         <span>처음으로</span>
-      </BackHome>
+      </BackHome> */}
     </Div>
   );
 };

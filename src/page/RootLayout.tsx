@@ -19,7 +19,8 @@ const Divs = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #000;
-
+  flex-direction: column;
   padding-bottom: 100px;
   // border: 3px solid black;
+  // background-image: url("/images/mika.webp");
 `;
